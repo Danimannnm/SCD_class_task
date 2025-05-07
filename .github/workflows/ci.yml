@@ -1,0 +1,19 @@
+name: CI – Run Node.js app
+
+on: [push]
+
+jobs:
+  run-node:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Run app.js
+        run: node app.js
